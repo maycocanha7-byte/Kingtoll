@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101018">
+  <title>Garena Account Helper</title>
+  <style>
+    :root{--bg:#0c0c12;--panel:#171720;--panel2:#20202d;--border:#303040;--red:#ff424e;--text:#f5f5fa;--muted:#a3a3b6;--green:#4ade80}
+    *{box-sizing:border-box}
+    body{margin:0;padding:20px 14px;min-height:100vh;background:radial-gradient(ellipse at top,#29131d 0,var(--bg) 58%);color:var(--text);font-family:system-ui,Arial,sans-serif;display:flex;align-items:center;justify-content:center}
+    .app{width:100%;max-width:410px;border:1px solid var(--border);border-radius:20px;background:var(--panel);overflow:hidden;box-shadow:0 20px 60px #0008}
+    .header{padding:22px 20px;background:linear-gradient(135deg,#35151f,#1b1724);border-bottom:1px solid var(--border)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:var(--red);font-size:25px;font-weight:900;color:white}
+    h1{margin:0;font-size:19px}
+    .subtitle{margin-top:5px;color:var(--muted);font-size:12px}
+    .topline{margin-top:18px;display:flex;justify-content:space-between;align-items:center;font-size:12px}
+    .status{display:flex;align-items:center;gap:7px;color:var(--green)}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+    button{font:inherit;cursor:pointer;touch-action:manipulation}
+    .small-btn{padding:8px 12px;border:1px solid var(--border);border-radius:9px;background:var(--panel2);color:white}
+    .content{padding:18px}
+    .section-title{margin:4px 0 12px;font-size:11px;font-weight:800;letter-spacing:1.4px;color:var(--muted)}
+    .item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px;margin-bottom:10px;background:var(--panel2);border:1px solid var(--border);border-radius:13px}
+    .item-title{font-size:14px;font-weight:700}
+    .description{margin-top:5px;color:var(--muted);font-size:11px;line-height:1.5}
+    .switch{width:46px;height:26px;flex-shrink:0;border:0;border-radius:30px;padding:3px;background:#4a4a5a;transition:background .2s}
+    .switch::after{content:"";display:block;width:20px;height:20px;border-radius:50%;background:white;transition:transform .2s}
+    .switch[aria-checked="true"]{background:var(--red)}
+    .switch[aria-checked="true"]::after{transform:translateX(20px)}
+    .main-btn{display:block;width:100%;padding:14px;margin-top:14px;border:0;border-radius:12px;background:var(--red);color:white;font-weight:800;text-align:center;text-decoration:none}
+    .main-btn:active{opacity:.8}
+    .secondary-btn{width:100%;padding:12px;margin-top:9px;border:1px solid var(--border);border-radius:12px;background:var(--panel2);color:white}
+    .notice{margin-top:16px;padding:12px;border:1px solid #4a3234;border-radius:12px;background:#281b21;color:#e8c9cd;font-size:12px;line-height:1.6}
+    .result{min-height:20px;margin-top:12px;color:var(--green);font-size:12px;line-height:1.6}
+    .footer{padding:0 18px 20px;text-align:center;color:#777789;font-size:11px}
+    [hidden]{display:none!important}
+    @media(max-width:360px){.content{padding:14px}.header{padding:18px 14px}}
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">G</div>
+        <div><h1>Account Helper</h1><div class="subtitle">DARK GAMING • ANDROID</div></div>
+      </div>
+      <div class="topline">
+        <div class="status"><span class="dot"></span><span>Trợ lý đăng ký</span></div>
+        <button class="small-btn" id="collapseBtn" aria-expanded="true">Thu gọn</button>
+      </div>
+    </header>
+    <section class="content" id="content">
+      <div class="section-title">CÀI ĐẶT GIAO DIỆN</div>
+      <div class="item">
+        <div><div class="item-title">Hiện hướng dẫn</div><div class="description">Hiện các bước đăng ký tài khoản an toàn.</div></div>
+        <button class="switch" role="switch" aria-checked="true" data-target="guide" aria-label="Bật tắt hướng dẫn"></button>
+      </div>
+      <div class="item">
+        <div><div class="item-title">Hiện lưu ý bảo mật</div><div class="description">Nhắc nhở bảo vệ thông tin tài khoản.</div></div>
+        <button class="switch" role="switch" aria-checked="true" data-target="security" aria-label="Bật tắt lưu ý bảo mật"></button>
+      </div>
+      <div id="guide">
+        <div class="section-title">HƯỚNG DẪN ĐĂNG KÝ</div>
+        <div class="item"><div><div class="item-title">01. Mở trang chính thức</div><div class="description">Đăng ký trực tiếp trên hệ thống Garena.</div></div><span>↗</span></div>
+        <div class="item"><div><div class="item-title">02. Điền thông tin</div><div class="description">Làm theo yêu cầu trên trang Garena.</div></div><span>✎</span></div>
+        <div class="item"><div><div class="item-title">03. Xác minh tài khoản</div><div class="description">Hoàn tất các bước xác minh nếu được yêu cầu.</div></div><span>✓</span></div>
+        <a class="main-btn" href="https://account.garena.com/" target="_blank" rel="noopener noreferrer">MỞ GARENA CHÍNH THỨC ↗</a>
+        <button class="secondary-btn" id="checkBtn">✓ Đánh dấu đã đọc hướng dẫn</button>
+        <div class="result" id="result" aria-live="polite"></div>
+      </div>
+      <div id="security">
+        <div class="notice"><strong>⚠ Lưu ý bảo mật</strong><br>• Không nhập mật khẩu hoặc OTP vào website này.<br>• Không dùng email hay số điện thoại của người khác khi chưa được phép.<br>• Chỉ nhập thông tin nhạy cảm trên trang Garena chính thức.<br>• Hoàn tất các bước xác minh theo hướng dẫn của Garena.</div>
+      </div>
+    </section>
+    <footer class="footer">Công cụ hỗ trợ độc lập • Không phải website chính thức của Garena</footer>
+  </main>
+  <script>
+    const content=document.getElementById("content");
+    const collapseBtn=document.getElementById("collapseBtn");
+    collapseBtn.addEventListener("click",()=>{
+      const isOpen=collapseBtn.getAttribute("aria-expanded")==="true";
+      collapseBtn.setAttribute("aria-expanded",String(!isOpen));
+      content.hidden=isOpen;
+      collapseBtn.textContent=isOpen?"Mở menu":"Thu gọn";
+    });
+    document.querySelectorAll(".switch").forEach(button=>{
+      button.addEventListener("click",()=>{
+        const isOn=button.getAttribute("aria-checked")==="true";
+        button.setAttribute("aria-checked",String(!isOn));
+        document.getElementById(button.dataset.target).hidden=isOn;
+      });
+    });
+    let checked=false;
+    document.getElementById("checkBtn").addEventListener("click",event=>{
+      checked=!checked;
+      event.currentTarget.textContent=checked?"✓ Đã đọc hướng dẫn":"✓ Đánh dấu đã đọc hướng dẫn";
+      document.getElementById("result").textContent=checked?"Bạn đã đánh dấu hoàn thành bước đọc hướng dẫn.":"";
+    });
+  </script>
+</body>
+</html>
